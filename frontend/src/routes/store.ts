@@ -1,5 +1,11 @@
+import { onMount } from 'svelte';
 import { writable } from 'svelte/store';
+
+
+
 export const rewardStore = writable({
-  SmallRewardList: ['Browse Instagram', 'Watch Youtube', 'Doodle on the Guitar'],
-  BigRewardList: ['Long Relax', 'Go Fishing', 'Mcdonalds order']
+  smallRewardList: ['Browse Instagram', 'Watch Youtube', 'Doodle on the Guitar'],
+  bigRewardList: ['Long Relax', 'Go Fishing', 'Mcdonalds order'],
+  smallRewardInterval: 15,
+  bigRewardInterval: 55,
 });

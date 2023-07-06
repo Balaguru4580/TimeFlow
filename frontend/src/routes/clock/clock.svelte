@@ -1,5 +1,7 @@
 <script lang="ts">
-	import Reward from './reward.svelte';
+	import Reward from "./reward.svelte";
+	import { rewardStore } from "../store";
+	import { onMount } from "svelte";
 
 	let sec = 0;
 	let min: number = 0;
@@ -7,7 +9,18 @@
 	let timer: any;
 	let isRunning = false;
 	let isPaused = false;
-	let rewardFlag: string = '';
+	let rewardFlag: string = "";
+	let smallRewardInterval = 0;
+	let bigRewardInterval = 0;
+	let prevHour = hr;
+	let hoursPassed = 0;
+
+	onMount(() => {
+		rewardStore.subscribe((value) => {
+			smallRewardInterval = value.smallRewardInterval;
+			bigRewardInterval = value.bigRewardInterval;
+		});
+	});
 
 	const incrementTime = () => {
 		if (!isPaused) {
@@ -56,47 +69,68 @@
 
 	const smallReward = () => {
 		pauseResumeTimer();
-		rewardFlag = 'small';
+		rewardFlag = "small";
 	};
 
 	const bigReward = () => {
 		pauseResumeTimer();
-		rewardFlag = 'big';
+		rewardFlag = "big";
 	};
 
 	const debug = () => {
-		sec = 59;
-		min = 59;
-		hr = 1;
+		sec = 57;
+		min = 54;
+		hr = 0;
 	};
 
 	const rewardComplete = () => {
-		rewardFlag = '';
+		rewardFlag = "";
 		pauseResumeTimer();
-	}
+	};
 
 	$: {
-		if (min === 30 && min > 0) {
+		if (prevHour !== hr) {
+			hoursPassed++;
+			prevHour = hr; // Update the previous hour
+		}
+
+		if (min > 0 && min % smallRewardInterval === 0 && sec === 0) {
 			smallReward();
 		}
-		if (hr > 0 && sec == 0 && min == 0) {
+
+		if (bigRewardInterval === 60) {
+			if (hr == hr++ && min === 0 && sec === 0) {
+				bigReward();
+			}
+		} else if (min > 0 && min % bigRewardInterval === 0 && sec === 0) {
+			console.log(sec, min, hr);
 			bigReward();
 		}
 	}
 </script>
-{#if rewardFlag == ''}
+
+{#if rewardFlag == ""}
 	<div class="flex flex-col justify-center h-screen">
 		<div class="items-center mx-auto space-y-8">
 			<h1 class="h1">{hr} Hours, {min} Minutes, {sec} Seconds</h1>
 			<section>
-				<button type="button" class="btn variant-filled" on:click={startTimer} disabled={isRunning}
-					>Start</button
+				<button
+					type="button"
+					class="btn variant-filled"
+					on:click={startTimer}
+					disabled={isRunning}>Start</button
 				>
-				<button type="button" class="btn variant-filled" on:click={pauseResumeTimer} disabled={!isRunning}
-					>Pause</button
+				<button
+					type="button"
+					class="btn variant-filled"
+					on:click={pauseResumeTimer}
+					disabled={!isRunning}>Pause</button
 				>
-				<button type="button" class="btn variant-filled" on:click={stopTimer} disabled={!isRunning}
-					>Stop</button
+				<button
+					type="button"
+					class="btn variant-filled"
+					on:click={stopTimer}
+					disabled={!isRunning}>Stop</button
 				>
 				<button on:click={debug}>Perform Debug Action</button>
 			</section>

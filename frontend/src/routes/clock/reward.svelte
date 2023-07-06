@@ -10,8 +10,8 @@
 	let BigRewardList = [''];
 
 	rewardStore.subscribe((value) => {
-		SmallRewardList = value.SmallRewardList;
-		BigRewardList = value.BigRewardList;
+		SmallRewardList = value.smallRewardList;
+		BigRewardList = value.bigRewardList;
 	})
 
 	if (rewardType == 'big') {
