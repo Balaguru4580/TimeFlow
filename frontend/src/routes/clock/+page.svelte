@@ -10,11 +10,12 @@
 			);
 			const jsonObj = await res.json();
 			if (jsonObj) {
-				console.log(jsonObj[0].big_rewards_time);
+				console.log(jsonObj);
 
 				rewardStore.update((storeData) => {
 					return {
 						...storeData,
+						userEmail: jsonObj[0].user_email,
 						bigRewardInterval: jsonObj[0].big_rewards_time,
 						smallRewardInterval: jsonObj[0].small_reward_time, //SvelteKit Preload Might be a better option
 					};
