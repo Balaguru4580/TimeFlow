@@ -27,7 +27,7 @@ This project contains two main folders:
 
    This will start the backend server.
 
-   You can find these instructions in the `package.json` file.
+   You can find these commands in the `package.json` files.
 
 ## Database Setup
 
