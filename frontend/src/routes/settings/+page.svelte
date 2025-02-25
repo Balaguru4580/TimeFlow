@@ -2,7 +2,7 @@
 	import { rewardStore } from "../store";
 	import { onMount } from "svelte";
 	import { Emerald, InputChip } from "@skeletonlabs/skeleton";
-	import { push } from 'svelte-spa-router';
+	import { goto } from '$app/navigation';
 	let smallRewards: string[];
 	let bigRewards: string[];
 	let smallRewardInterval: number;
@@ -51,8 +51,8 @@
 	}
 
 	const goBack = () => {
-    push('/previous-route'); // Replace with your desired back route
-	};
+        goto('/'); // Navigate to the Clock page (default route)
+    };
 </script>
 <div class="flex flex-col items-center">
     <button on:click={goBack} type="button" class="btn variant-soft">Back</button>
