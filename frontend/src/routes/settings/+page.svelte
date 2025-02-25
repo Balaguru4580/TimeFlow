@@ -51,7 +51,7 @@
 	}
 
 	const goBack = () => {
-        goto('/'); // Navigate to the Clock page (default route)
+        goto('/'); 
     };
 </script>
 <div class="flex flex-col items-center">
