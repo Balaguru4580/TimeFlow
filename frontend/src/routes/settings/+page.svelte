@@ -2,7 +2,7 @@
 	import { rewardStore } from "../store";
 	import { onMount } from "svelte";
 	import { Emerald, InputChip } from "@skeletonlabs/skeleton";
-	import { afterUpdate } from "svelte";
+	import { push } from 'svelte-spa-router';
 	let smallRewards: string[];
 	let bigRewards: string[];
 	let smallRewardInterval: number;
@@ -49,9 +49,13 @@
 
 		postData();
 	}
+
+	const goBack = () => {
+    push('/previous-route'); // Replace with your desired back route
+	};
 </script>
 <div class="flex flex-col items-center">
-	<button on:click={postData} type="button" class="btn variant-soft">Back</button>
+    <button on:click={goBack} type="button" class="btn variant-soft">Back</button>
 </div>
 <div class="flex flex-col mx-auto p-8 space-y-8">
 	<div class="flex flex-col items-center">
