@@ -4,7 +4,7 @@ import { writable } from 'svelte/store';
 
 
 export const rewardStore = writable({
-  userEmail: '',
+  userEmail: 'testEmail@gmail.com',
   smallRewardList: ['Browse Instagram', 'Watch Youtube', 'Doodle on the Guitar'],
   bigRewardList: ['Long Relax', 'Go Fishing', 'Mcdonalds order'],
   smallRewardInterval: 15,
