@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "yarn": "^1.22.22"
+  },
+  "packageManager": "yarn@4.7.0",
+  "name": "TimeFlow",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Balaguru4580/TimeFlow.git",
+  "author": "Balaguru Ragupathi <balaguru4580@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "frontend/*",
+    "backend/*"
+  ]
+}

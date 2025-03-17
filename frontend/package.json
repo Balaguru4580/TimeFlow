@@ -36,5 +36,7 @@
 	"type": "module",
 	"dependencies": {
 		"svelte-spa-router": "^4.0.1"
-	}
+	},
+	"main": "index.js",
+	"license": "MIT"
 }
