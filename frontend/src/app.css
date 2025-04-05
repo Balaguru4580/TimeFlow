@@ -1,10 +1,6 @@
 @import 'tailwindcss';
 @import "@skeletonlabs/skeleton";
 @import "@skeletonlabs/skeleton/optional/presets";
-@import "@skeletonlabs/skeleton/themes/rocket";
-
-@import '@skeletonlabs/skeleton';
-@import '@skeletonlabs/skeleton/optional/presets';
-@import '@skeletonlabs/skeleton/themes/cerberus';
+@import "@skeletonlabs/skeleton/themes/legacy";
 
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';

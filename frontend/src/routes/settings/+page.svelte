@@ -63,30 +63,30 @@
 	</div>
 	<h2 class="h2 justify-left">Big Rewards</h2>
 	<TagsInput
-		bind:value={bigRewards}
-		name="chips"
-		placeholder="Enter activities..."
-	/>
+	value={bigRewards}
+	onValueChange={(e) => (bigRewards = e.value)}
+	placeholder="Enter activities..."
+	/>		
 	<hr />
 	<h2 class="h2 justify-left">When should the big rewards happen?</h2>
 	<div class="flex flex-row space-x-2 items-center">
 		<p>Every</p>
-		<input class="input w-auto" bind:value={bigRewardInterval} />
+		<input type="number" bind:value={bigRewardInterval} class="input input-filled w-24"/>
 		<p>Minutes</p>
 		<button class="btn preset-filled" on:click={updateStore}>Set</button>
 	</div>
 	<hr />
 	<h2 class="h2 justify-left">Small Rewards</h2>
 	<TagsInput
-		bind:value={smallRewards}
-		name="chips"
-		placeholder="Enter activities..."
+	value={smallRewards}
+	onValueChange={(e) => (smallRewards = e.value)}
+	placeholder="Enter activities..."
 	/>
 	<hr />
 	<h2 class="h2 justify-left">When should the small rewards happen?</h2>
 	<div class="flex flex-row space-x-2 items-center">
 		<p>Every</p>
-		<input class="input w-auto" bind:value={smallRewardInterval} />
+		<input type="number" bind:value={smallRewardInterval} class="input input-filled w-24"/>
 		<p>Minutes</p>
 		<button class="btn preset-filled" on:click={updateStore}>Set</button>
 	</div>
