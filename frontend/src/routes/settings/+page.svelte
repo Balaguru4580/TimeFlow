@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { rewardStore } from "../store";
 	import { onMount } from "svelte";
-	import { Emerald, InputChip } from "@skeletonlabs/skeleton";
+	import { TagsInput } from "@skeletonlabs/skeleton-svelte";
 	import { goto } from '$app/navigation';
 	let smallRewards: string[];
 	let bigRewards: string[];
@@ -55,14 +55,14 @@
     };
 </script>
 <div class="flex flex-col items-center">
-    <button on:click={goBack} type="button" class="btn variant-soft">Back</button>
+    <button on:click={goBack} type="button" class="btn preset-tonal">Back</button>
 </div>
 <div class="flex flex-col mx-auto p-8 space-y-8">
 	<div class="flex flex-col items-center">
 		<h1 class="h1">Settings</h1>
 	</div>
 	<h2 class="h2 justify-left">Big Rewards</h2>
-	<InputChip
+	<TagsInput
 		bind:value={bigRewards}
 		name="chips"
 		placeholder="Enter activities..."
@@ -73,11 +73,11 @@
 		<p>Every</p>
 		<input class="input w-auto" bind:value={bigRewardInterval} />
 		<p>Minutes</p>
-		<button class="btn variant-filled" on:click={updateStore}>Set</button>
+		<button class="btn preset-filled" on:click={updateStore}>Set</button>
 	</div>
 	<hr />
 	<h2 class="h2 justify-left">Small Rewards</h2>
-	<InputChip
+	<TagsInput
 		bind:value={smallRewards}
 		name="chips"
 		placeholder="Enter activities..."
@@ -88,6 +88,6 @@
 		<p>Every</p>
 		<input class="input w-auto" bind:value={smallRewardInterval} />
 		<p>Minutes</p>
-		<button class="btn variant-filled" on:click={updateStore}>Set</button>
+		<button class="btn preset-filled" on:click={updateStore}>Set</button>
 	</div>
 </div>

@@ -1,19 +1,12 @@
-<script>
-	import '../app.postcss';
-	// Your selected Skeleton theme:
-	import '@skeletonlabs/skeleton/themes/theme-modern.css';
+<script lang="ts">
 
-	// This contains the bulk of Skeletons required styles:
-	import '@skeletonlabs/skeleton/styles/skeleton.css';
+	import '@skeletonlabs/skeleton/themes/modern';
+	import '../app.css';
 
-	// Finally, your application's global stylesheet (sometimes labeled 'app.css')
-	import '../app.postcss';
-	import { LightSwitch } from '@skeletonlabs/skeleton';
 </script>
 
 <div class="p-2">
 	<div class="fixed">
-		<LightSwitch />
 	</div>
 	<slot />
 </div>

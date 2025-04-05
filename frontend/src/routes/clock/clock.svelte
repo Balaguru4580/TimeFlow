@@ -116,19 +116,19 @@
 			<section>
 				<button
 					type="button"
-					class="btn variant-filled"
+					class="btn preset-filled"
 					on:click={startTimer}
 					disabled={isRunning}>Start</button
 				>
 				<button
 					type="button"
-					class="btn variant-filled"
+					class="btn preset-filled"
 					on:click={pauseResumeTimer}
 					disabled={!isRunning}>Pause</button
 				>
 				<button
 					type="button"
-					class="btn variant-filled"
+					class="btn preset-filled"
 					on:click={stopTimer}
 					disabled={!isRunning}>Stop</button
 				>

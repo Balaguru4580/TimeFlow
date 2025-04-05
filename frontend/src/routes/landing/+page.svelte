@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { Stepper, Step } from '@skeletonlabs/skeleton';
-	function onCompleteHandler(e: Event): void {
+		function onCompleteHandler(e: Event): void {
 		window.location.href = '/clock';
 	}
 </script>

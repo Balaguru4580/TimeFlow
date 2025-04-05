@@ -33,7 +33,7 @@
 
 <div class="flex flex-col">
 	<div class="ml-auto justify-end">
-		<a href="/settings" class="btn variant-filled">Settings</a>
+		<a href="/settings" class="btn preset-filled">Settings</a>
 	</div>
 	<div>
 		<Clock />

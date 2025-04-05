@@ -50,7 +50,7 @@
 		<Timer min={timeDuration} on:timerComplete={rewardStop} />
 	</div>
 
-	<button type="button" class="btn variant-filled" disabled={(output != '')} on:click={randomizer}>Start</button>
+	<button type="button" class="btn preset-filled" disabled={(output != '')} on:click={randomizer}>Start</button>
 
 	{#if output !== ''}
 		<h3 class="h3">Your {rewardName} Reward is</h3>
