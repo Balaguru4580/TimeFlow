@@ -14,7 +14,7 @@ This project contains two main folders:
 1. **Frontend**: To start the frontend, navigate to the `frontend` folder and run the following command:
 
    ```
-   npm run dev
+   yarn dev
    ```
 
    This will start the front-end development server.
