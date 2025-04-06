@@ -4,6 +4,10 @@
 	import { TagsInput, Toaster, createToaster } from "@skeletonlabs/skeleton-svelte";
 	import { goto } from '$app/navigation';
 
+    const apiURL = import.meta.env.VITE_API_URL;
+
+    console.log(apiURL);
+
 	const toaster = createToaster();
 
 	let smallRewards = $state<string[]>([]);
@@ -32,7 +36,7 @@
 		};
 		console.log(allData);
 		try {
-			const response = await fetch("http://localhost:8000/clock", {
+			const response = await fetch(apiURL+"/clock", {
 				method: "POST", //This should be update actually
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(allData),
