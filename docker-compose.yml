@@ -4,9 +4,9 @@ services:
     restart: always
     container_name: timeflow_db
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 9626
-      POSTGRES_DB: SkinnerFlowDB
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5432:5432"
     volumes:
@@ -18,7 +18,7 @@ services:
     depends_on:
       - database
     environment:
-      DATABASE_URL: postgres://postgres:9626@database:5432/mydatabase
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@database:5432/${POSTGRES_DB}
     ports:
       - "5000:5000"
 
