@@ -3,7 +3,6 @@
 	import { onMount } from "svelte";
 	import { TagsInput, Toaster, createToaster } from "@skeletonlabs/skeleton-svelte";
 	import { goto } from '$app/navigation';
-	import { fade, slide } from 'svelte/transition';
 
 	const toaster = createToaster();
 
