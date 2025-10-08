@@ -21,7 +21,7 @@ To run the full app (frontend, backend, and database) using Docker:
 docker compose up --build
 ```
 
-Then open your browser at **[http://localhost:8080](http://localhost:8080)**.
+Then open your browser at localhost, at port 8080. This can be changed in the nginx entry within docker-compose.yml
 
 > Docker will automatically start all services (frontend, backend, database, and Nginx).
 
