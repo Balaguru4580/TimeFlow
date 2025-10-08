@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // Get Data for user
-app.get('/clock/:userEmail', async (req, res) => {
+app.get('/api/clock/:userEmail', async (req, res) => {
     const { userEmail: user_email } = req.params; //Destructuring Example
     try {
         const clock = await pool.query('SELECT * FROM clock WHERE user_email = $1', [user_email]);
@@ -24,7 +24,7 @@ app.get('/clock/:userEmail', async (req, res) => {
 
 //POST data for user
 
-app.post('/clock', async (req, res) => {
+app.post('/api/clock', async (req, res) => {
     const { user_email, small_reward_time, big_rewards_time, small_rewards, big_rewards } = req.body;
     
 
