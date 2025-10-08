@@ -1,3 +1,7 @@
+Absolutely 👍 — here’s your updated **README**, rewritten minimally to fit both **Docker** and **local dev** workflows while keeping your original tone and brevity:
+
+---
+
 # Timeflow
 
 Timeflow is a simple timer app designed with psychology-based incentive features to help users stay motivated while managing their time. It uses positive reinforcement and rewards to encourage productive habits.
@@ -6,29 +10,66 @@ Timeflow is a simple timer app designed with psychology-based incentive features
 
 This project contains two main folders:
 
-- **frontend**: Contains the front-end code for the user interface of the app.
-- **backend**: Contains the back-end code that manages the server, database, and other functionalities.
+* **frontend**: Contains the front-end code for the user interface of the app.
+* **backend**: Contains the back-end code that manages the server, database, and other functionalities.
 
-### Instructions for Running the Project
+Nginx is used to server as a reverse proxy for the front and backend.
 
-1. **Frontend**: To start the frontend, navigate to the `frontend` folder and run the following command:
+---
 
-   ```
+### Run with Docker (recommended)
+
+To run the full app (frontend, backend, and database) using Docker:
+
+```bash
+docker compose up --build
+```
+
+Then open your browser at **[http://localhost:8080](http://localhost:8080)**.
+
+> Docker will automatically start all services (frontend, backend, database, and Nginx).
+
+To stop everything:
+
+```bash
+docker compose down
+```
+
+---
+
+### Local Development (manual)
+
+If you prefer to run locally without Docker:
+
+1. **Frontend**
+   Navigate to the `frontend` folder and run:
+
+   ```bash
    yarn dev
    ```
 
-   This will start the front-end development server.
+   Starts the development server.
 
-2. **Backend**: To start the backend, navigate to the `backend` folder and run:
+2. **Backend**
+   Navigate to the `backend` folder and run:
 
-   ```
+   ```bash
    node ./server.js
    ```
 
-   This will start the backend server.
+   Starts the backend server.
 
-   You can find these commands in the `package.json` files.
+You can find these commands in the `package.json` files.
+
+---
 
 ## Database Setup
 
-Timeflow uses a PostgreSQL database to store user data and reward information. Currently, you need to install PostgreSQL on your PC to set up the database.
+Timeflow uses PostgreSQL to store user and reward data.
+
+* With **Docker**, the database runs automatically as a container.
+* For **local setup**, you’ll need to install PostgreSQL manually on your PC and configure the environment variables in a `.env` file.
+
+---
+
+Would you like me to also add a short “.env example” block (for both local and Docker) so new devs can copy it right into their setup?
