@@ -27,7 +27,7 @@ services:
     build:
       context: ./frontend
       args:
-        VITE_API_URL: "" # This only seems to work locally, but might be phased out since nginx is handling things now, so no need to know local backend loaction
+        VITE_API_URL: "/api" # This only seems to work locally, but might be phased out since nginx is handling things now, so no need to know local backend loaction
     container_name: timeflow_frontend
     depends_on:
       - backend
