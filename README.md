@@ -1,4 +1,5 @@
 # Timeflow
+[![Build Status](https://github.com/Balaguru4580/TimeFlow/actions/workflows/docker-image.yml/badge.svg?branch=master)](https://github.com/Balaguru4580/TimeFlow/actions/workflows/docker-image.yml)
 
 Timeflow is a simple timer app designed with psychology-based incentive features to help users stay motivated while managing their time. It uses positive reinforcement and rewards to encourage productive habits.
 
