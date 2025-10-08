@@ -65,7 +65,3 @@ Timeflow uses PostgreSQL to store user and reward data.
 
 * With **Docker**, the database runs automatically as a container.
 * For **local setup**, you’ll need to install PostgreSQL manually on your PC and configure the environment variables in a `.env` file.
-
----
-
-Would you like me to also add a short “.env example” block (for both local and Docker) so new devs can copy it right into their setup?
