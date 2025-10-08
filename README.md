@@ -1,7 +1,3 @@
-Absolutely 👍 — here’s your updated **README**, rewritten minimally to fit both **Docker** and **local dev** workflows while keeping your original tone and brevity:
-
----
-
 # Timeflow
 
 Timeflow is a simple timer app designed with psychology-based incentive features to help users stay motivated while managing their time. It uses positive reinforcement and rewards to encourage productive habits.
