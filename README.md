@@ -24,7 +24,7 @@ This project is a **full-stack web application**:
 
 ```mermaid
 graph LR
-  G[Github Action - Build And Push] --> H[Docker Hub]
+  G[Github Action - Build And Push] --> H[Docker Hub Registry]
   H --> I[Github Action - EC2Deploy]
   I --> J[AWS EC2 Instance]
 ```
