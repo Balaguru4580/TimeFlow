@@ -29,7 +29,7 @@ jobs:
 
             echo "Pull latest code"
             git fetch --all
-            git reset --hard origin/main
+            git reset --hard origin/master
 
             echo "Pull latest images"
             docker-compose -f docker-compose.prod.yml pull
