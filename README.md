@@ -3,14 +3,31 @@
 
 Timeflow is a simple timer app based on the Skinner Box concept. Uses psychology-based incentive features to help users stay motivated while managing their time, through positive reinforcement via customizable rewards.
 
-## Project Structure
+## Project Architecture
 
-This project contains two main folders:
+This project is a **full-stack web application**:
 
-* **frontend**: Contains the front-end code for the user interface of the app.
-* **backend**: Contains the back-end code that manages the server, database, and other functionalities.
+- **Frontend:**  
+  - Built with **Svelte** and **Vite**  
+  - Written in **TypeScript**  
+  - Uses **Skeleton** as a UI component library.
 
-Nginx is used to server as a reverse proxy for the front and backend, along with a PostgreSQL database to store user and reward data.
+- **Backend:**  
+  - Implemented with **Node.js** and **Express.js**  
+  - **PostgreSQL** is used as the primary database.
+
+- **Infrastructure:**  
+  - **Nginx** acts as a reverse proxy to route requests between the frontend and backend.  
+  - The entire application is **containerized with Docker** and orchestrated using **Docker Compose** for easy deployment.
+  - Automated build, test, and deployment, with CD/CD pipelines using **GitHub Actions**.  
+  - Code is automatically built, and upon passing, deployed to an **AWS EC2** instance on push to the main branch.
+
+```mermaid
+graph LR
+  G[Github Action - Build And Push] --> H[Docker Hub]
+  H --> I[Github Action - EC2Deploy]
+  I --> J[AWS EC2 Instance]
+```
 
 ## Run this project
 
