@@ -3,6 +3,12 @@ name: Build and Push All Images
 on:
   push:
     branches: [ "master" ]
+    paths-ignore:
+      - '.vscode/**'
+      - 'README.md'
+      - '.gitignore'
+      - '.yarnrc.yml'
+      - '.env.example'
 
 jobs:
   build:
