@@ -39,9 +39,7 @@ To run the full app (frontend, backend, and database) using Docker:
 docker compose up --build
 ```
 
-Then open your browser at localhost, at port 80. This can be changed in the nginx entry within docker-compose.yml
-
-> Docker will automatically start all services (frontend, backend, database, and Nginx).
+Then open your browser at localhost, at port 80. This can be changed in the nginx entry within docker-compose.yml.
 
 To stop everything:
 
@@ -69,14 +67,12 @@ If you prefer to run locally without Docker:
    node ./server.js
    ```
 
-   Starts the backend server.
-
 You can find these commands in the `package.json` files.
 
 
 ### Production Deployment
 
-For deploying Timeflow to a production environment (e.g. AWS EC2 or a VPS), use docker-compose.prod.yml as follows:
+For deploying Timeflow to a production environment like an EC2 instance, use docker-compose.prod.yml as follows:
 
 ```bash
 docker compose -f docker-compose.prod.yml up -d --build
