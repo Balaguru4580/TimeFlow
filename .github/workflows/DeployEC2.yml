@@ -23,7 +23,7 @@ jobs:
 
       - name:  Deploy using Docker Compose
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_SERVER_USER }}@${{ secrets.EC2_SERVER_HOST }} << 'EOF'
             echo " Navigate to project directory..."
             cd /home/ubuntu/TimeFlow
 
