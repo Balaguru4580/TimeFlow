@@ -5,7 +5,7 @@ Timeflow is a simple timer app based on the Skinner Box concept. Uses psychology
 
 ## Project Architecture
 
-This project is a **full-stack web application**:
+This project is a **full-stack web application** with:
 
 - **Frontend:**  
   - Built with **Svelte** and **Vite**  
@@ -25,7 +25,7 @@ This project is a **full-stack web application**:
 ```mermaid
 graph LR
   G[Github Action - Build And Push] --> H[Docker Hub Registry]
-  H --> I[Github Action - EC2Deploy]
+  H --> I[Github Action - Deploy to EC2]
   I --> J[AWS EC2 Instance]
 ```
 
