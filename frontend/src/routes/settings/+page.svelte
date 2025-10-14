@@ -6,7 +6,7 @@
 
     const apiURL = import.meta.env.VITE_API_URL;
 
-    console.log(apiURL);
+    // console.log("Vite API URL ", apiURL);
 
 	const toaster = createToaster();
 
@@ -34,19 +34,19 @@
 			small_rewards: smallRewards, 
 			big_rewards: bigRewards,
 		};
-		console.log(allData);
+		console.log("postData triggered!", allData);
 		try {
 			const response = await fetch(apiURL+"/clock", {
 				method: "POST", //This should be update actually
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(allData),
 			});
-			console.log(response);
+			console.log("postData response", response);
 			toaster.success({
 				title: 'Settings saved successfully'
 			});
 		} catch (err) {
-			console.log(err);
+			console.log("postData error", err);
 			toaster.error({
 				title: 'Failed to save settings'
 			});
