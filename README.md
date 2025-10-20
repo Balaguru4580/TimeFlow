@@ -3,9 +3,7 @@
 
 Timeflow is a simple timer app based on the Skinner Box concept. Uses psychology-based incentive features to help users stay motivated while managing their time, through positive reinforcement via customizable rewards.
 
-## Project Architecture
-
-This project is a **full-stack web application** with:
+## Project Stack and Architecture
 
 - **Frontend:**  
   - Built with **Svelte** and **Vite**  
