@@ -2,7 +2,7 @@ services:
   database:
     image: postgres:17.4
     restart: always
-    container_name: timeflow_DB
+    container_name: timeflow_database
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}

@@ -1,4 +1,4 @@
-CREATE DATABASE timeflow_DB;
+CREATE DATABASE timeflow_db;
 
 CREATE TABLE clock(
     id VARCHAR(255) PRIMARY KEY,
