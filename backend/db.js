@@ -1,15 +1,10 @@
-const Pool = require('pg').Pool;
+const { Pool } = require('pg');
+require('dotenv').config();
 
-require('dotenv').config()
-
-console.log(process.env)
+console.log(" Connecting to DB:", process.env.DATABASE_URL); 
 
 const pool = new Pool({
-    user: process.env.UNAME,
-    password: process.env.PASSWORD,
-    host: process.env.HOST,
-    port: process.env.DBPORT,
-    database: 'SkinnerFlowDB'
-})
+  connectionString: process.env.DATABASE_URL,
+});
 
-module.exports = pool
+module.exports = pool;
